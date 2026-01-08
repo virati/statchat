@@ -161,5 +161,5 @@ def inverse_probability_weighting(
         'ate': ate,
         'treated_weighted_mean': treated_weighted_mean,
         'control_weighted_mean': control_weighted_mean,
-        'effective_n': np.sum(weights) ** 2 / np.sum(weights ** 2),  # Effective sample size
+        'effective_n': np.sum(weights) ** 2 / np.sum(weights ** 2),  # Kish's effective sample size
     }

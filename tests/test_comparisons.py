@@ -73,8 +73,10 @@ def test_compare_methods_simulation():
     """Test simulation-based comparison."""
     
     def simple_method(**kwargs):
-        return {'ate': np.mean(kwargs['outcomes'][kwargs['treatment']]) - 
-                      np.mean(kwargs['outcomes'][~kwargs['treatment']])}
+        """Simple difference in means estimator."""
+        treated_mean = np.mean(kwargs['outcomes'][kwargs['treatment']])
+        control_mean = np.mean(kwargs['outcomes'][~kwargs['treatment']])
+        return {'ate': treated_mean - control_mean}
     
     methods = {
         'simple': simple_method,

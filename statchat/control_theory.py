@@ -150,5 +150,5 @@ def control_theoretic_overlap(
         'overlap_score': overlap_score,
         'n_overlap': np.sum(valid_idx),
         'n_total': len(treatment),
-        'effective_n': np.sum(weights_overlap) ** 2 / np.sum(weights_overlap ** 2),
+        'effective_n': np.sum(weights_overlap) ** 2 / np.sum(weights_overlap ** 2),  # Kish's effective sample size
     }
